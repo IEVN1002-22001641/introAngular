@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; // Requerido para usar pipes como uppercase o date si es standalone
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,18 @@ import { Component, signal } from '@angular/core';
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('introAngular');
+  titulo: string = "Arturo Landeros";
+
+  // Método corregido con CamelCase
+  duplicaNumero(num: number): number {
+    return num * 2;
+  }
+
+  pelicula = {
+    titulo: "GoodFellas",
+    anio: 1972,
+    genero: "Drama", // Agregada la coma al final
+    fechaLanzamiento: new Date(),
+    precio: 345
+  };
 }
